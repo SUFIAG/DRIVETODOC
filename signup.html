@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="signup.css">
+    <style>
+        #msg
+        {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: yellow;
+            color: #000;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            right: 35%;
+            top: 30px;
+            font-size: 17px;
+            margin-right: 30px;
+        }
+        #msg.show 
+        {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+        @-webkit-keyframes fadein 
+        {
+            from {top: 0; opacity: 0;}
+            to{top: 30px; opacity: 1;}
+        }
+        @keyframes fadein
+        {
+            from{top: 0;opacity: 0;}
+            to{top: 30;opacity: 1;}
+        }
+        @-webkit-keyframes fadeout
+        {
+            from{top: 30px;opacity: 1;}
+            to{top: 0;opacity: 0;}
+        }
+        @keyframes fadeout 
+        {
+            from {top: 30px;opacity: 1;}
+            to{top: 0;opacity: 0;}
+        }
+    </style>
+</head>
+<body>
+    <div class="signup">
+        <form action="">
+            <h2 style="color: #fff">Sign Up</h2>
+            <input type="text" name="username" placeholder="First name" required="required"><br><br>
+            <input type="text" name="username" placeholder="Last name" required="required"><br><br>
+            <input type="password" name="password" placeholder="Passowrd" required="required"><br><br>
+            <input type="password" name="password" placeholder="Confirm Passowrd" required="required"><br><br>
+            <input type="email" name="email" placeholder="Email" required="required"><br><br>
+            <input type="button" value="Sign Up" onclick="myfunction()"><br><br>
+                <div id="msg">Congratulations You sign up Successfully !</div>
+                <script>
+                    function myfunction(){
+                    var x = document.getElementById("msg");
+                    x.className = "show";
+                    setTimeout(function()
+                    {
+                        x.className = x.className.replace("show","");
+                    }, 3000);
+
+                    }
+                </script>
+    Already have an account ?<a href="login.html" style="text-decoration: none; color:yellow; font-family:'Play',sans-serif;">&nbsp;Log In</a>
+        </form>
+    </div>
+</body>
+</html>
