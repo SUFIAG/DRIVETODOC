@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="forgotpass.css">
+    <style>
+            #msg
+            {
+                visibility: hidden;
+                min-width: 250px;
+                background-color: yellow;
+                color: #000;
+                text-align: center;
+                border-radius: 2px;
+                padding: 16px;
+                position: fixed;
+                z-index: 1;
+                right: 36.5%;
+                top: 35px;
+                font-size: 17px;
+                margin-right: 30px;
+            }
+            #msg.show 
+            {
+                visibility: visible;
+                -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+                animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+            @-webkit-keyframes fadein 
+            {
+                from {top: 0; opacity: 0;}
+                to{top: 30px; opacity: 1;}
+            }
+            @keyframes fadein
+            {
+                from{top: 0;opacity: 0;}
+                to{top: 30;opacity: 1;}
+            }
+            @-webkit-keyframes fadeout
+            {
+                from{top: 30px;opacity: 1;}
+                to{top: 0;opacity: 0;}
+            }
+            @keyframes fadeout 
+            {
+                from {top: 30px;opacity: 1;}
+                to{top: 0;opacity: 0;}
+            }
+        </style>
+
+
+</head>
+<body>
+    <div class="forgot">
+        <form action="">
+            <h2 style="color: #fff">Forget password</h2>
+            <h5 style="font-size: 14px; color:yellow;">Enter Email here that you used on your account.We send link on your email to reset your
+            password </h5>
+            <input type="email" name="username" placeholder="Enter your email"><br><br>
+            <input type="button" value="Send" onclick="myfunction()"><br><br>
+            <a href="login.html" style="text-decoration: none">Go back to Home page</a><br><br>
+            <div id="msg">Link sent on your email successfully</div>
+            <script>
+                    function myfunction(){
+                    var x = document.getElementById("msg");
+                    x.className = "show";
+                    setTimeout(function()
+                    {
+                        x.className = x.className.replace("show","");
+                    }, 3000);
+    
+                    }
+                </script>
+        </form>
+    </div>
+</body>
+</html>
